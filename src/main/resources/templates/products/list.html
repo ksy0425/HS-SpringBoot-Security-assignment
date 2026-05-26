@@ -123,7 +123,7 @@
             <li class="page-item" th:unless="${!productPage.hasPrevious()}">
                 <a class="page-link"
                    th:href="@{/products(
-                   page=${i},
+                   page=${productPage.number - 1},
                    size=${productPage.size},
                    keyword=${keyword})}">이전</a>
             </li>
