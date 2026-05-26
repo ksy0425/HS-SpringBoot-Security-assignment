@@ -49,6 +49,11 @@
                     </p>
                 </div>
             </div>
+
+            <div class="text-center mt-3 text-light"
+                 th:text="${'학번: 2171194 | 성명: 김성윤 | 실습 수행: ' + #temporals.format(#temporals.createNow(), 'yyyy-MM-dd HH:mm:ss')}">
+            </div>
+
         </div>
     </div>
 </div>
