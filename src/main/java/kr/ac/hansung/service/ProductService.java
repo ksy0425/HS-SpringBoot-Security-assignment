@@ -14,11 +14,11 @@ import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class ProductService {
 
     private final ProductRepository productRepository;
 
-    @Transactional(readOnly = true)
     public List<Product> findAll() {
         return productRepository.findAll();
     }
@@ -31,7 +31,6 @@ public class ProductService {
         return productRepository.findByNameContaining(keyword, pageable);
     }
 
-    @Transactional(readOnly = true)
     public Product findById(Long id) {
         return productRepository.findById(id)
             .orElseThrow(() -> new NoSuchElementException("상품을 찾을 수 없습니다: " + id));
